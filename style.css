@@ -1,0 +1,86 @@
+:root {
+  --paper: #eef2f7;
+  --card: #ffffff;
+  --ink: #1b2a41;
+  --muted: #5d6b82;
+  --accent: #2f5bea;
+  --accent-dark: #2447bd;
+  --done: #3e7c59;
+  --danger: #b3261e;
+  --line: #d5dce8;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  padding: 24px 16px;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+  line-height: 1.5;
+}
+.planner {
+  max-width: 620px;
+  margin: 0 auto;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 28px;
+}
+h1 { margin: 0 0 4px; font-size: 2rem; letter-spacing: -0.5px; }
+.lead { margin: 0 0 22px; color: var(--muted); }
+.add { display: flex; gap: 10px; flex-wrap: wrap; }
+.add input {
+  flex: 1 1 240px;
+  padding: 11px 12px;
+  font-size: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: var(--ink);
+}
+button {
+  font: inherit;
+  cursor: pointer;
+  border-radius: 6px;
+}
+#addBtn {
+  padding: 11px 18px;
+  border: 0;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+}
+#addBtn:hover { background: var(--accent-dark); }
+:focus-visible { outline: 3px solid #f0b429; outline-offset: 2px; }
+.error { min-height: 1.4em; margin: 6px 0 0; color: var(--danger); font-size: 0.9rem; }
+.filters { display: flex; gap: 8px; margin: 12px 0 16px; flex-wrap: wrap; }
+.filter {
+  padding: 6px 14px;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--muted);
+}
+.filter.active { background: var(--ink); border-color: var(--ink); color: #fff; }
+.tasks { list-style: none; margin: 0; padding: 0; }
+.task {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+.task input { width: 20px; height: 20px; accent-color: var(--done); flex-shrink: 0; }
+.task span { flex: 1; word-break: break-word; }
+.task.done span { color: var(--muted); text-decoration: line-through; }
+.del {
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--danger);
+  padding: 4px 10px;
+}
+.del:hover { background: #fdecea; }
+.empty { color: var(--muted); padding: 16px 0; }
+.counter { margin: 14px 0 0; color: var(--muted); font-size: 0.9rem; }
+@media (max-width: 480px) {
+  .planner { padding: 18px; }
+  #addBtn { width: 100%; }
+}

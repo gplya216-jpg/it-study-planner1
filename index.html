@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IT Study Planner</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="planner">
+    <h1>IT Study Planner</h1>
+    <p class="lead">Планируйте учебные задачи и отмечайте сделанное.</p>
+
+    <div class="add">
+      <input id="taskInput" type="text" maxlength="100" placeholder="Например: сдать лабораторную по сетям" aria-label="Название задачи">
+      <button id="addBtn" type="button">Добавить задачу</button>
+    </div>
+    <p id="error" class="error" role="alert"></p>
+
+    <div class="filters" role="group" aria-label="Фильтр задач">
+      <button type="button" class="filter active" data-filter="all">Все</button>
+      <button type="button" class="filter" data-filter="active">Активные</button>
+      <button type="button" class="filter" data-filter="done">Выполненные</button>
+    </div>
+
+    <ul id="taskList" class="tasks"></ul>
+    <p id="counter" class="counter"></p>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
